@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import Login from './screens/login';
 import Welcome from './screens/welcome';
+import logo from './img/sparkol-black.png';
 
 export const SCREEN_NAMES = {
   LOGIN: 'login',
@@ -9,7 +10,19 @@ export const SCREEN_NAMES = {
 };
 
 const Container = styled.div`
-  text-align: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 50%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: sans-serif;
+  font-size: 15px;
+`;
+const Logo = styled.img`
+  width: 250px;
 `;
 
 class App extends React.Component {
@@ -44,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <Container>
-        Hello World
+        <Logo src={logo} alt='Logo' />
         {this.displaySelectedScreen()}
       </Container>
     );

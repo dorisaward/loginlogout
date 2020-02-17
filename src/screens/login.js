@@ -8,23 +8,29 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  width: 100%;
 `;
 const FormLabel = styled.span`
-  width: 50%;
-  margin: 10px;
+  margin: 10px 10px 0;
 `;
 const FormError = styled(FormLabel)`
   color: #ff0000;
 `;
 const ERROR_TEXT = 'Please check your username and password and try logging in again';
 const FormInput = styled.input`
+  margin: 0 10px 10px;
+  width: 100%;
+  height: 50px;
+  border: solid 2px darkblue;
+  border-radius: 20px;
+  padding: 0 10px;
+  font-family: sans-serif;
+  font-size: 15px;
+`;
+const SubmitButton = styled(FormInput)`
   width: 50%;
   margin: 10px;
-`;
-const SubmitButton = styled.input`
-  width: 30%;
-  margin: 10px;
-  background-color: #ff00ff;
+  background-color: #ffffff;
 `;
 
 export default class Login extends React.Component {
@@ -57,9 +63,9 @@ export default class Login extends React.Component {
   render() {
     return (
       <Form onSubmit={this.handleOnSubmit}>
-        <FormLabel>Enter your username:</FormLabel>
+        <FormLabel>Username:</FormLabel>
         <FormInput type='text' name='username' onChange={this.handleInput}/>
-        <FormLabel>Enter your password:</FormLabel>
+        <FormLabel>Password:</FormLabel>
         <FormInput type='password' name='password' onChange={this.handleInput}/>
         {this.state.error && <FormError>{ERROR_TEXT}</FormError>}
         <SubmitButton type='submit'/>

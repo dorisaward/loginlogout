@@ -7,12 +7,25 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  width: 100%;
 `;
 const WelcomeText = styled.span`
-  margin: 10px;
+  margin: 50px 10px 10px;
+  font-family: sans-serif;
+  font-size: 15px;
 `;
 const Logout = styled.button`
-  color: #ff0000;
+  font-family: sans-serif;
+  font-size: 15px;
+  width: 50%;
+  margin: 10px;
+  background-color: #ffffff;
+  height: 50px;
+  border: solid 2px darkblue;
+  border-radius: 20px;
+  padding: 0 10px;
+  bottom: 10px;
+  position: absolute;
 `;
 
 function Welcome(props) {
